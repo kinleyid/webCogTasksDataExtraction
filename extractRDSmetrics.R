@@ -61,11 +61,3 @@ extract.RDS.metrics <- function(full.path) {
   names(metrics) <- metric.names
   return(metrics)
 }
-
-data <- get.data(trial.directories,
-                 file.pattern,
-                 task.name,
-                 load.data.func,
-                 get.metrics.func)
-
-write.csv(data, file = 'C:/Users/Isaac/Projects/VarsityCog/Data/Consolidated/Tidy data/RDS.csv', row.names = F)
