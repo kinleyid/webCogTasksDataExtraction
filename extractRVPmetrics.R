@@ -71,11 +71,3 @@ extract.RVP.metrics <- function(full.path) {
   names(metrics) <- c('RVP_TruePositives', 'RVP_FalsePositives', 'RVP_FalseNegative', 'RVP_MeanTotalRT')
   return(metrics)
 }
-
-data <- get.data(trial.directories,
-                 file.pattern,
-                 task.name,
-                 load.data.func,
-                 get.metrics.func)
-
-write.csv(data, file = 'C:/Users/Isaac/Projects/VarsityCog/Data/Consolidated/Tidy data/RVP.csv', row.names = F)
