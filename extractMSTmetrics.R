@@ -34,7 +34,7 @@ extract.MST.metrics <- function(full.path) {
   cnt <- 1
   for (i1 in 1:length(resps)) {
     for (i2 in 1:length(image.types)) {
-      intended.names[cnt] <- sprintf('p_%s_g_%s)', tolower(resps[i1]), tolower(image.types[i2]))
+      intended.names[cnt] <- sprintf('p_%s_g_%s', tolower(resps[i1]), tolower(image.types[i2]))
       metrics[cnt] <- sum(contingency.table[resps[i1], image.types[i2], ]) / sum(contingency.table[, image.types[i2], ])
       cnt <- cnt + 1
     }
@@ -49,5 +49,5 @@ extract.MST.metrics <- function(full.path) {
   # }
   # metrics <- c(metrics, new.metrics)
   # names(metrics) <- c(intended.names, new.names)
-  metrics
+  return(metrics)
 }
