@@ -17,7 +17,7 @@ extract.RVP.metrics <- function(full.path) {
   patterns <- list(c(2,4,6), c(3,5,7), c(4,6,8))
   # Ignore practice round
   input.data.frame <- input.data.frame[-(1:which(input.data.frame$Event == 'Task start')), ]
-  resp.idx <- input.data.frame$Event == 'Space'
+  resp.idx <- is.na(as.double(as.vector(input.data.frame$Event)))
   resp.table <- input.data.frame[resp.idx, ]
   stim.table <- input.data.frame[!resp.idx, ]
   stim.table$Event <- as.double(as.vector(stim.table$Event))
